@@ -30,7 +30,8 @@ nobase_dist_conf_DATA = scripts/common.nhc \
                         scripts/lbnl_net.nhc \
                         scripts/lbnl_nv.nhc \
                         scripts/lbnl_ps.nhc \
-                        scripts/osc_gpfs.nhc
+                        scripts/osc_gpfs.nhc \
+                        scripts/osc_slabinfo.nhc
 
 MAINTAINERCLEANFILES = Makefile.in aclocal.m4 configure install-sh missing
 DISTCLEANFILES =
