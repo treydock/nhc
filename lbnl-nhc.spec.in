@@ -120,8 +120,8 @@ test "$RPM_BUILD_ROOT" != "/" && %{__rm} -rf $RPM_BUILD_ROOT
 %ghost %dir %{_sysconfdir}/%{sname}/sysconfig/
 %config(noreplace) %{_sysconfdir}/%{sname}/%{sname}.conf
 %config(noreplace) %{_sysconfdir}/logrotate.d/%{sname}
-%config(noreplace) %{nhc_script_dir}/*.nhc
-%config(noreplace) %{nhc_helper_dir}/*
-%config(noreplace) %{_sbindir}/%{sname}
-%config(noreplace) %{_sbindir}/%{sname}-genconf
-%config(noreplace) %{_sbindir}/%{sname}-wrapper
+%{nhc_script_dir}/*.nhc
+%{nhc_helper_dir}/*
+%{_sbindir}/%{sname}
+%{_sbindir}/%{sname}-genconf
+%{_sbindir}/%{sname}-wrapper
