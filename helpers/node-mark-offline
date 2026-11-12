@@ -137,6 +137,10 @@ elif [[ "$NHC_RM" == "slurm" ]]; then
             exec $SLURM_SCONTROL $SLURM_SC_OFFLINE_ARGS NodeName=$HOSTNAME Reason="$LEADER $NOTE"
             ;;
         down*)
+            if [[ "$OLD_NOTE_LEADER" == "$LEADER" && "$OLD_NOTE" == *"reboot complete"* ]]; then
+                exec $SLURM_SCONTROL $SLURM_SC_OFFLINE_ARGS NodeName=$HOSTNAME Reason="$LEADER $NOTE"
+                return 0
+            fi
             echo "$0:  Not changing state of down node $HOSTNAME."
             ;;
         *)  echo "$0:  Not sure how to handle node state \"$STATUS\" on $HOSTNAME" ;;
